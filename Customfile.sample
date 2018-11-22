@@ -1,0 +1,18 @@
+# Machine config
+config.vm.provider "virtualbox" do |v|
+  v.memory = 512
+  v.cpus = 1
+end
+
+# SSH Access config
+#config.ssh.username = "myuser"
+#config.ssh.password = "mypass"
+
+
+# Sync your repository folder as a shared resource
+if File.directory?(File.expand_path("/FULL/PATH/TO/REPOSITORIES/"))
+    puts ""
+    puts "REPOSITORIES FOLDER LOADED"
+    puts ""
+    config.vm.synced_folder "/Users/page/Source/repos/", "/var/source", :mount_options => ["dmode=777", "fmode=666"]
+end
