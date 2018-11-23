@@ -2,6 +2,7 @@
 
 ## November 23th
 
+- Finished configuration for local domains and .env variables
 - Added sample.env file
 - Added setup.sh file
 
