@@ -3,3 +3,4 @@
 .vagrant/
 ubuntu*.log
 Customfile
+.env
