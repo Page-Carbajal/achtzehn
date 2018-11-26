@@ -1,5 +1,13 @@
 # Vagrant Ubuntu Bionic Beaver - Changelog
 
+## November 26th
+
+- Added .conf to .gitignore
+- Added virtual-hosts.sample
+- Finished provision-lamp.sh
+- Finished install-php for apache only config
+
+
 ## November 23th
 
 - Finished configuration for local domains and .env variables

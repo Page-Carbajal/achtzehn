@@ -4,3 +4,4 @@
 ubuntu*.log
 Customfile
 .env
+provision-commands/setup-vhosts.sh
