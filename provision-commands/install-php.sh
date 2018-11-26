@@ -14,7 +14,7 @@ MAKE_PHP_PRIORITY='<IfModule mod_dir.c>
 </IfModule>'
 echo "$MAKE_PHP_PRIORITY" | sudo tee /etc/apache2/mods-enabled/dir.conf
 
-sudo service apache2 restart
+sudo systemctl restart apache2
 
 
 # /*===================================
@@ -73,14 +73,14 @@ echo 'display_startup_errors = On' | sudo tee -a $PHP_USER_INI_PATH
 echo 'display_errors = On' | sudo tee -a $PHP_USER_INI_PATH
 echo 'error_reporting = E_ALL' | sudo tee -a $PHP_USER_INI_PATH
 echo 'short_open_tag = On' | sudo tee -a $PHP_USER_INI_PATH
-sudo service apache2 restart
+sudo systemctl restart apache2
 
 # Disable PHP Zend OPcache
 echo 'opache.enable = 0' | sudo tee -a $PHP_USER_INI_PATH
 
 # Absolutely Force Zend OPcache off...
 sudo sed -i s,\;opcache.enable=0,opcache.enable=0,g /etc/php/7.2/apache2/php.ini
-sudo service apache2 restart
+sudo systemctl restart apache2
 
 
 # /*================================
@@ -89,4 +89,4 @@ sudo service apache2 restart
 sudo wget https://phar.phpunit.de/phpunit-6.1.phar
 sudo chmod +x phpunit-6.1.phar
 sudo mv phpunit-6.1.phar /usr/local/bin/phpunit
-reboot_webserver_helper
+sudo systemctl restart apache2

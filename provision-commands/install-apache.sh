@@ -37,4 +37,4 @@ sudo a2enmod headers
 sudo a2enmod include
 sudo a2enmod rewrite
 
-sudo service apache2 restart
+sudo systemctl restart apache2
