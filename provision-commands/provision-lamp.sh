@@ -8,8 +8,8 @@ printf "\nInstalling WP CLI\n"
 /provision-commands/install-wpcli.sh;
 printf "\nInstalling MySQL\n"
 /provision-commands/install-mysql.sh;
-printf "\nInstalling Node\n"
-/provision-commands/install-node.sh;
+#printf "\nInstalling Node\n"
+#/provision-commands/install-node.sh;
 
 if [[ -f "./setup-vhosts.sh" ]]; then
   sudo /provision-commands/setup-vhosts.sh
