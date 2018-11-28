@@ -10,6 +10,7 @@ printf "\nInstalling MySQL\n"
 /provision-commands/install-mysql.sh;
 printf "\nInstalling Node\n"
 /provision-commands/install-node.sh;
-if [[ -f "./setup-vhosts.sh"]]; then
-  /provision-commands/setup-vhosts.sh
+
+if [[ -f "./setup-vhosts.sh" ]]; then
+  sudo /provision-commands/setup-vhosts.sh
 fi
