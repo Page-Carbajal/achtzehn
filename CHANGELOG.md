@@ -1,5 +1,10 @@
 # Vagrant Ubuntu Bionic Beaver - Changelog
 
+## November 28th 
+
+- Changed base box to Bento/Ubuntu 18.4
+
+
 ## November 26th
 
 - Added .conf to .gitignore

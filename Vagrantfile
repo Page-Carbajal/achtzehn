@@ -1,9 +1,8 @@
 Vagrant.configure("2") do |config|
-    config.vm.box = "ubuntu/xenial64"
+    config.vm.box = "bento/ubuntu-18.04"
     config.vm.hostname = "fracing"
     config.vm.network "forwarded_port", guest: 80, host: 80
-    config.vm.network "private_network", ip: "192.168.10.100"
-    #config.vm.synced_folder ".", "/var/www", :mount_options => ["dmode=777", "fmode=666"]
+    config.vm.network "private_network", ip: "192.168.10.10"
     config.ssh.forward_agent = true
     config.ssh.insert_key = false
 
