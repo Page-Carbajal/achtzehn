@@ -1,9 +1,14 @@
 # Vagrant Ubuntu Bionic Beaver - Changelog
 
-## 2019
+## 2020
 
+## March 18th 
+
+- Added support to update vagrant box to the setup
 - Upgraded files to setup PHP 7.4
 
+
+## 2019
 
 ### November 28th 
 
