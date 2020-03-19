@@ -8,9 +8,13 @@ if [ -d "/var/www/html" ]; then
     sudo mv /var/www/html /var/www/public
 fi
 
+# Disable default sites
+sudo a2dissite 000-default;
+
+
 # Delete defautl sites enabled
-if [ -f "/etc/apache2/sites-enabled/000-default.conf" ]; then
-  sudo rm /etc/apache2/sites-enabled/000-default.conf
+if [ -f "/etc/apache2/sites-available/000-default.conf" ]; then
+  sudo rm /etc/apache2/sites-available/000-default.conf
 fi
 
 # Clean VHOST with full permissions
