@@ -1,6 +1,7 @@
 # Update packages indexes
 printf "\nUpdating the OS repository\n";
-sudo apt-get update
+sudo apt-get update;
+sudo apt-get -y install unzip;
 
 # The following is "sudo apt-get -y upgrade" without any prompts
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" upgrade

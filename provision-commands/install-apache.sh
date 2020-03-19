@@ -31,7 +31,7 @@ MY_WEB_CONFIG='<VirtualHost *:80>
 </VirtualHost>'
 echo "$MY_WEB_CONFIG" | sudo tee /etc/apache2/sites-available/000-default.conf
 
-Squash annoying FQDN warning
+# Squash annoying FQDN warning
 echo "ServerName achtzehn" | sudo tee /etc/apache2/conf-available/servername.conf
 sudo a2enconf servername
 

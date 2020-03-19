@@ -34,7 +34,7 @@ sudo apt-get -y install curl
 sudo apt-get -y install imagemagick
 
 # Common Useful Stuff (some of these are probably already installed)
-sudo apt-get -y install php7.4-{bcmath,bz2,cgi,cli,curl,enchant,fpm,gd,imagick,imap,intl,json,ldap,mbstring,mysql,odbc,pear,pspell,tidy,xml,xmlrpc,zip};
+sudo apt-get -y install php-{bcmath,bz2,cgi,cli,curl,enchant,fpm,gd,imagick,imap,intl,json,ldap,mbstring,mysql,odbc,pear,pspell,tidy,xml,xmlrpc,zip};
 
 
 

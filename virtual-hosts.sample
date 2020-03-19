@@ -1,7 +1,7 @@
 
-<VirtualHost api.fracing.dev:80>
-    ServerName api.fracing.dev
-    ServerAdmin NAME@fracing.com
+<VirtualHost :80>
+    ServerName domain.loc
+    ServerAdmin user@domain.com
     DocumentRoot /PATH/TO/API/PUBLIC/DIRECTORY
     <Directory /PATH/TO/API/PUBLIC/DIRECTORY/>
         Options Indexes FollowSymLinks
