@@ -28,15 +28,6 @@ puts ""
 config.hostsupdater.aliases = localDomains;
 
 
-# Sync provision-commands folder
-if File.exists?(File.join('provision-commands')) then
-    puts ""
-    puts "LOADING VIRTUAL HOSTS"
-    puts ""
-    config.vm.synced_folder "./provision-commands", "/provision-commands", :mount_options => ["dmode=755", "fmode=755"]
-end
-
-
 # SSH Access config
 #config.ssh.username = "myuser"
 #config.ssh.password = "mypass"

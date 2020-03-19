@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
     # Sync provision-commands folder
     if File.directory?(File.expand_path("./provision-commands"))
         puts ""
-        puts "REPOSITORIES FOLDER LOADED"
+        puts "LOADING PROVISION COMMANDS FOLDER"
         puts ""
         config.vm.synced_folder "./provision-commands", "/provision-commands", :mount_options => ["dmode=755", "fmode=755"]
     end
