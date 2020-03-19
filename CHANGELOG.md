@@ -4,6 +4,7 @@
 
 ## March 18th 
 
+- Enabled support for .env files on Customfile
 - Added support to update vagrant box to the setup
 - Upgraded files to setup PHP 7.4
 
