@@ -1,3 +1,7 @@
+# Enable .env support
+config.env.enable
+
+
 # Machine config
 config.vm.provider "virtualbox" do |v|
   v.memory = 512
@@ -6,11 +10,30 @@ end
 
 
 # Sync your repository folder as a shared resource
-if File.directory?(File.expand_path("/FULL/PATH/TO/REPOSITORIES/"))
+if File.directory?(File.expand_path(ENV['REPOSITORIES_PATH']))
     puts ""
     puts "REPOSITORIES FOLDER LOADED"
     puts ""
-    config.vm.synced_folder "/FULL/PATH/TO/REPOSITORIES/", "/var/code", :mount_options => ["dmode=777", "fmode=666"]
+    config.vm.synced_folder ENV['REPOSITORIES_PATH'], "/var/sources", :mount_options => ["dmode=777", "fmode=666"]
+end
+
+
+# Hostnames
+localDomains = ENV['LOCAL_DOMAINS'].split(/\s*,\s*/)
+puts ""
+puts "Adding the following Domains to your hosts file"
+puts ""
+puts localDomains
+puts ""
+config.hostsupdater.aliases = localDomains;
+
+
+# Sync provision-commands folder
+if File.exists?(File.join('provision-commands')) then
+    puts ""
+    puts "LOADING VIRTUAL HOSTS"
+    puts ""
+    config.vm.synced_folder "./provision-commands", "/provision-commands", :mount_options => ["dmode=755", "fmode=755"]
 end
 
 
