@@ -5,8 +5,9 @@
 # Install PHP
 sudo add-apt-repository -y ppa:ondrej/php # Super Latest Version (currently 7.2)
 sudo apt-get update
-sudo apt-get install -y php7.4
-sudo apt-get -y install libapache2-mod-php
+sudo apt-get install -y php8.0
+sudo apt-get -y install libapache2-mod-php8.0
+sudo apt install php8.0-fpm
 
 # Add index.php to readable file types
 MAKE_PHP_PRIORITY='<IfModule mod_dir.c>
@@ -22,8 +23,8 @@ sudo systemctl restart apache2;
 # ===================================*/
 
 # Base Stuff
-sudo apt-get -y install php7.4-common
-sudo apt-get -y install php7.4-dev
+sudo apt-get -y install php8.0-common
+sudo apt-get -y install php8.0-dev
 # Enchant
 sudo apt-get -y install libenchant-dev
 # LDAP
@@ -34,14 +35,16 @@ sudo apt-get -y install curl
 sudo apt-get -y install imagemagick
 
 # Common Useful Stuff (some of these are probably already installed)
-sudo apt-get -y install php-{bcmath,bz2,cgi,cli,curl,enchant,fpm,gd,imagick,imap,intl,json,ldap,mbstring,mysql,odbc,pear,pspell,tidy,xml,xmlrpc,zip};
+# pear, xmlrpc, json have no installations candidates
+sudo apt-get -y install php8.0-{bcmath,bz2,cgi,cli,curl,enchant,fpm,gd,imagick,imap,intl,ldap,mbstring,mysql,odbc,pspell,tidy,xml,zip,dom,mbstring,xml,xmlwriter};
+
 
 
 
 # /*===========================================
 # =            CUSTOM PHP SETTINGS            =
 # ===========================================*/
-PHP_USER_INI_PATH=/etc/php/7.4/apache2/conf.d/user.ini
+PHP_USER_INI_PATH=/etc/php/8.0/apache2/conf.d/user.ini
 
 
 echo 'display_startup_errors = On' | sudo tee -a $PHP_USER_INI_PATH
@@ -54,7 +57,7 @@ sudo systemctl restart apache2
 echo 'opache.enable = 0' | sudo tee -a $PHP_USER_INI_PATH
 
 # Absolutely Force Zend OPcache off...
-sudo sed -i s,\;opcache.enable=0,opcache.enable=0,g /etc/php/7.2/apache2/php.ini
+sudo sed -i s,\;opcache.enable=0,opcache.enable=0,g /etc/php/8.0/apache2/php.ini
 sudo systemctl restart apache2
 
 
