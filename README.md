@@ -1,6 +1,6 @@
 # Zwanzig a Vagrant Local Environment
 
-Based on (Bento / Ubuntu 20.04)[https://app.vagrantup.com/bento/boxes/ubuntu-20.04].
+Based on [Bento / Ubuntu 20.04](https://app.vagrantup.com/bento/boxes/ubuntu-20.04).
 
 
 ## Installation
